@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/night"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".MainActivity" >
+
+    <ProgressBar
+        android:id="@+id/loadidngBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/white"
+        android:layout_centerInParent="true"/>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+        android:visibility="gone"
+            android:id="@+id/rl1">
+
+            <TextView
+                android:id="@+id/cityNameTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:text="City Name"
+                android:singleLine="true"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="50dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/roboto_bold"
+                android:textAlignment="center" />
+
+            <LinearLayout
+                android:id="@+id/ll1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:background="@drawable/custom_bg"
+                android:layout_below="@id/cityNameTV"
+                android:weightSum="5">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:id="@+id/tstLayout"
+                    android:layout_weight="4.5"
+                    android:padding="5dp"
+                    android:background="@android:color/transparent"
+                    android:textColorHint="@color/white"
+                    app:hintTextColor="@color/white"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/enterCityTV"
+                        android:layout_width="match_parent"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:hint="Enter City Name"
+                        android:textSize="15sp"
+                        android:textColorHint="#F4F4F4"
+                        android:textCursorDrawable="@drawable/custom_mark"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/white"
+                        android:layout_height="match_parent" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageView
+                    android:id="@+id/searchBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_weight="0.5"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_search" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/temperatureTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll1"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="10dp"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:padding="5dp"
+                android:text="30"
+                android:textColor="@color/white"
+                android:textSize="50sp"
+                android:fontFamily="@font/roboto_bold"/>
+
+            <ImageView
+                android:id="@+id/temperatureIcon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_below="@id/temperatureTV"
+                android:src="@mipmap/ic_launcher"/>
+
+            <TextView
+                android:id="@+id/conditionTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/temperatureIcon"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="10dp"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:padding="5dp"
+                android:text="Condition"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:fontFamily="@font/roboto_medium"/>
+
+            <TextView
+                android:id="@+id/tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/recyclerView"
+                android:text="Today's Weather Forecast"
+                android:layout_marginStart="11dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:fontFamily="@font/roboto_medium"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="40dp"/>
+
+        </RelativeLayout>
+
+</RelativeLayout>
